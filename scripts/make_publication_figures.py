@@ -328,11 +328,15 @@ def figure_ablation() -> list[Path]:
             width=0.68,
             error_kw={"elinewidth": 1.0, "capthick": 1.0},
         )
-        for bar, hatch, mean, r2 in zip(bars, hatches, means, r2s):
+        for bar, hatch, mean, std, r2 in zip(bars, hatches, means, stds, r2s):
             bar.set_hatch(hatch)
+            # Place the two-line value label above the error-bar cap.  Using
+            # only the bar height caused the larger strain uncertainties to
+            # cross through the R² line in the right-hand panel.
+            annotation_y = mean + std + ymax * 0.018
             ax.text(
                 bar.get_x() + bar.get_width() / 2,
-                mean + ymax * 0.035,
+                annotation_y,
                 f"{mean:.2f}\n$R^2$={r2:.3f}",
                 ha="center",
                 va="bottom",
@@ -457,3 +461,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
