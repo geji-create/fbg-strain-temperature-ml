@@ -1,0 +1,35 @@
+{
+  "hybrid": {
+    "strain_levels_ue": [0, 100, 200, 300, 400, 500, 600, 700, 800, 900],
+    "replicates_per_channel": 2,
+    "output_wavelength_min_nm": 1536.5,
+    "output_wavelength_max_nm": 1555.0,
+    "wavelength_step_nm": 0.02,
+    "template_half_width_nm": 3.2,
+    "photoelastic_coefficient": 0.22,
+    "strain_gradient_fraction_mean": 0.08,
+    "strain_gradient_fraction_std": 0.015,
+    "strain_jitter_std_ue": 2.0,
+    "temperature_jitter_std_c": 0.05,
+    "wavelength_jitter_std_nm": 0.003,
+    "residual_scale_min": 0.65,
+    "residual_scale_max": 1.15,
+    "power_offset_std_db": 0.12,
+    "white_noise_std_db": 0.04,
+    "random_seed": 20261012
+  },
+  "models": {
+    "n_estimators": 150,
+    "boosting_learning_rate": 0.01,
+    "random_seed": 42
+  },
+  "cnn": {
+    "epochs": 80,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "patience": 12,
+    "dropout": 0.15,
+    "random_seed": 42
+  }
+}

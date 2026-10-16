@@ -1,0 +1,102 @@
+{
+  "device": "cuda",
+  "protocol": "Train and validate on one solver; test on unseen conditions from the other solver. Conditions remain disjoint.",
+  "directions": [
+    {
+      "model": "cnn_uniform_cmt_to_simplus_like",
+      "parameters": 726770,
+      "best_epoch": 75,
+      "epochs_run": 105,
+      "best_validation_loss_scaled": 0.020161081686615945,
+      "metrics": {
+        "train": {
+          "temperature": {
+            "mae_C": 1.1269692182540894,
+            "rmse_C": 1.4302488565444946,
+            "r2": 0.9770119190216064
+          },
+          "strain": {
+            "mae_ue": 19.037334442138672,
+            "rmse_ue": 24.627967834472656,
+            "r2": 0.9909399747848511
+          }
+        },
+        "validation": {
+          "temperature": {
+            "mae_C": 1.3020976781845093,
+            "rmse_C": 1.6554943323135376,
+            "r2": 0.9695139527320862
+          },
+          "strain": {
+            "mae_ue": 19.4415225982666,
+            "rmse_ue": 25.25547981262207,
+            "r2": 0.9909769296646118
+          }
+        },
+        "test": {
+          "temperature": {
+            "mae_C": 1.7821263074874878,
+            "rmse_C": 2.2466301918029785,
+            "r2": 0.944862961769104
+          },
+          "strain": {
+            "mae_ue": 28.78263282775879,
+            "rmse_ue": 37.199127197265625,
+            "r2": 0.9793081879615784
+          }
+        }
+      },
+      "checkpoint": "C:\\Users\\geji\\Desktop\\大创\\fbg_ml_reproduction\\outputs\\pytorch_expanded_v3_cross_solver\\cnn_uniform_cmt_to_simplus_like_best.pt",
+      "train_solver": "uniform_cmt",
+      "test_solver": "simplus_like"
+    },
+    {
+      "model": "cnn_simplus_like_to_uniform_cmt",
+      "parameters": 726770,
+      "best_epoch": 103,
+      "epochs_run": 133,
+      "best_validation_loss_scaled": 0.018640975867708524,
+      "metrics": {
+        "train": {
+          "temperature": {
+            "mae_C": 1.068101406097412,
+            "rmse_C": 1.3520444631576538,
+            "r2": 0.9794570803642273
+          },
+          "strain": {
+            "mae_ue": 20.802249908447266,
+            "rmse_ue": 25.206789016723633,
+            "r2": 0.9905090928077698
+          }
+        },
+        "validation": {
+          "temperature": {
+            "mae_C": 1.2255932092666626,
+            "rmse_C": 1.5456713438034058,
+            "r2": 0.9734246134757996
+          },
+          "strain": {
+            "mae_ue": 21.511106491088867,
+            "rmse_ue": 26.430227279663086,
+            "r2": 0.9901179671287537
+          }
+        },
+        "test": {
+          "temperature": {
+            "mae_C": 1.6264859437942505,
+            "rmse_C": 2.0277676582336426,
+            "r2": 0.955082356929779
+          },
+          "strain": {
+            "mae_ue": 20.171117782592773,
+            "rmse_ue": 24.421213150024414,
+            "r2": 0.9910820126533508
+          }
+        }
+      },
+      "checkpoint": "C:\\Users\\geji\\Desktop\\大创\\fbg_ml_reproduction\\outputs\\pytorch_expanded_v3_cross_solver\\cnn_simplus_like_to_uniform_cmt_best.pt",
+      "train_solver": "simplus_like",
+      "test_solver": "uniform_cmt"
+    }
+  ]
+}

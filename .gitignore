@@ -1,0 +1,61 @@
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Local archives, build caches and copyrighted reference PDFs
+archive/
+references/papers/
+
+# Raw/private experimental data and large generated datasets
+data/source_archives/
+data/real_raw/
+data/external_mendeley_dual_peak/raw/
+data/**/*.npz
+data/**/*.gz
+data/**/*spectra*.csv
+data/**/*.list
+data/**/*.BMP
+
+# Model checkpoints and large intermediate outputs
+outputs/**/*.joblib
+outputs/**/*.pt
+outputs/**/*.pth
+outputs/**/*.pkl
+outputs/**/*.npz
+outputs/**/*.gz
+outputs/**/*spectra*.csv
+outputs/**/*predictions*.csv
+
+# Debug/quick-run outputs; formal experiment summaries remain tracked
+outputs/quick_check/
+outputs/cnn_quick/
+outputs/hybrid_quick/
+outputs/hybrid_quick_v2/
+outputs/hybrid_quick_v3/
+outputs/hybrid_gradient8_quick/
+outputs/**/multichannel_cnn_quick/
+outputs/ablation_study/runs/
+
+# PNG is sufficient for GitHub preview; vector/PDF editions remain local
+figures/publication/*.pdf
+figures/publication/*.svg
+
+# Personal presentation/report deliverables are kept locally
+presentations/final/*.pptx
+presentations/final/*.pdf
+reports/final/
+reports/presentation_support/
+scripts/build_progress_report.py
+scripts/build_final_project_report.py
+
+# Editor and Office temporary files
+.vscode/
+.idea/
+~$*
+*.tmp
+*.bak
+

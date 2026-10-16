@@ -1,0 +1,314 @@
+{
+  "method": "semi-empirical digital twin",
+  "scientific_status": "Temperature behavior and noise come from real spectra; strain labels and strain-gradient broadening are physics-based simulations, not experiments.",
+  "hybrid_config": {
+    "strain_levels_ue": [
+      0,
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900
+    ],
+    "replicates_per_channel": 2,
+    "output_wavelength_min_nm": 1536.5,
+    "output_wavelength_max_nm": 1555.0,
+    "wavelength_step_nm": 0.02,
+    "template_half_width_nm": 3.2,
+    "photoelastic_coefficient": 0.22,
+    "strain_gradient_fraction_mean": 0.08,
+    "strain_gradient_fraction_std": 0.015,
+    "strain_jitter_std_ue": 2.0,
+    "temperature_jitter_std_c": 0.05,
+    "wavelength_jitter_std_nm": 0.003,
+    "residual_scale_min": 0.65,
+    "residual_scale_max": 1.15,
+    "power_offset_std_db": 0.12,
+    "white_noise_std_db": 0.04,
+    "random_seed": 20261012
+  },
+  "real_file_count": 40,
+  "spectrum_count": 3200,
+  "condition_count": 400,
+  "wavelength_point_count": 926,
+  "feature_warning_count": 299,
+  "channel_calibration": [
+    {
+      "channel": "CH1",
+      "temperature_sensitivity_pm_per_C": 10.213528932660882,
+      "temperature_intercept_nm": 1549.7829263161987,
+      "reference_center_nm": 1550.43,
+      "strain_sensitivity_pm_per_ue": 1.2093354
+    },
+    {
+      "channel": "CH2",
+      "temperature_sensitivity_pm_per_C": 9.619803123280793,
+      "temperature_intercept_nm": 1549.5917245995329,
+      "reference_center_nm": 1550.21,
+      "strain_sensitivity_pm_per_ue": 1.2091638
+    },
+    {
+      "channel": "CH3",
+      "temperature_sensitivity_pm_per_C": 9.478059288085461,
+      "temperature_intercept_nm": 1539.7171177856221,
+      "reference_center_nm": 1540.32,
+      "strain_sensitivity_pm_per_ue": 1.2014496
+    },
+    {
+      "channel": "CH4",
+      "temperature_sensitivity_pm_per_C": 9.812751704742922,
+      "temperature_intercept_nm": 1549.6551117846188,
+      "reference_center_nm": 1550.2849999999999,
+      "strain_sensitivity_pm_per_ue": 1.2092223
+    }
+  ],
+  "sensitivity_geometry": {
+    "temperature_strain_sensitivity_cosine": 0.9996477894242638,
+    "separation_angle_degrees": 1.5207281112793967
+  },
+  "best_classical_test_metrics": [
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "strain_ue",
+      "model": "random_forest",
+      "r2": 0.9340105314918378,
+      "mae": 59.05649156778348,
+      "rmse": 73.06283858955128
+    },
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "temperature_c",
+      "model": "random_forest",
+      "r2": 0.3868723940216354,
+      "mae": 7.378359361713382,
+      "rmse": 9.007384802378514
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "strain_ue",
+      "model": "random_forest",
+      "r2": 0.9281645971812114,
+      "mae": 65.79930972070852,
+      "rmse": 81.6301769729864
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "temperature_c",
+      "model": "random_forest",
+      "r2": 0.3421026409349883,
+      "mae": 8.249748341912177,
+      "rmse": 10.112368028132966
+    }
+  ],
+  "best_classical_real_anchor_metrics": [
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "strain_ue",
+      "model": "bagging",
+      "r2": NaN,
+      "mae": 44.70225951590921,
+      "rmse": 58.333168516754114
+    },
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "temperature_c",
+      "model": "random_forest",
+      "r2": 0.62823180781644,
+      "mae": 5.337721710472073,
+      "rmse": 7.0511546327999195
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "strain_ue",
+      "model": "random_forest",
+      "r2": NaN,
+      "mae": 45.79185749487763,
+      "rmse": 59.74519558081392
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "temperature_c",
+      "model": "random_forest",
+      "r2": 0.6278252337740868,
+      "mae": 5.445073543595563,
+      "rmse": 7.055009229733123
+    }
+  ],
+  "best_multichannel_test_metrics": [
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "strain_ue",
+      "model": "random_forest",
+      "r2": 0.9213138731165904,
+      "mae": 62.240648819408946,
+      "rmse": 78.34398500685087
+    },
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "temperature_c",
+      "model": "random_forest",
+      "r2": 0.4081953470009868,
+      "mae": 7.94634247502975,
+      "rmse": 9.568724350376167
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "strain_ue",
+      "model": "bagging",
+      "r2": 0.9386152473745085,
+      "mae": 63.21320108685627,
+      "rmse": 75.45911846501552
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "temperature_c",
+      "model": "bagging",
+      "r2": 0.42295935420507147,
+      "mae": 7.8514952104469105,
+      "rmse": 9.470589179764476
+    }
+  ],
+  "best_multichannel_real_anchor_metrics": [
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "strain_ue",
+      "model": "random_forest",
+      "r2": NaN,
+      "mae": 37.70289152298608,
+      "rmse": 49.71382649533238
+    },
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "temperature_c",
+      "model": "random_forest",
+      "r2": 0.7266217732997869,
+      "mae": 4.555968811575665,
+      "rmse": 6.0465282345759395
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "strain_ue",
+      "model": "random_forest",
+      "r2": NaN,
+      "mae": 35.828834906341214,
+      "rmse": 41.86126289975696
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "temperature_c",
+      "model": "bagging",
+      "r2": 0.7741554784424516,
+      "mae": 4.359052815730394,
+      "rmse": 5.495774494000574
+    }
+  ],
+  "analytical_multichannel_metrics": [
+    {
+      "model": "four_channel_physics_inverse",
+      "target": "strain_ue",
+      "r2": -0.013815194845625545,
+      "mae": 227.74105742165884,
+      "rmse": 289.0632902100618
+    },
+    {
+      "model": "four_channel_physics_inverse",
+      "target": "temperature_c",
+      "r2": -8.592377141970703,
+      "mae": 28.261116825539347,
+      "rmse": 35.82774974217248
+    }
+  ],
+  "analytical_multichannel_real_anchor_metrics": [
+    {
+      "model": "four_channel_physics_inverse",
+      "target": "strain_ue",
+      "r2": NaN,
+      "mae": 115.13111324117457,
+      "rmse": 147.2159293346693
+    },
+    {
+      "model": "four_channel_physics_inverse",
+      "target": "temperature_c",
+      "r2": -1.4715255235921028,
+      "mae": 14.317022069403384,
+      "rmse": 18.18053562563478
+    }
+  ],
+  "physics_guided_metrics": [
+    {
+      "split_method": "paper_random_70_20_10",
+      "partition": "test",
+      "model": "physics_guided_two_stage",
+      "target": "strain_ue",
+      "r2": 0.8462186652958715,
+      "mae": 84.01018063008665,
+      "rmse": 109.52377059747622
+    },
+    {
+      "split_method": "paper_random_70_20_10",
+      "partition": "test",
+      "model": "physics_guided_two_stage",
+      "target": "temperature_c",
+      "r2": -0.16594304447817643,
+      "mae": 10.40844560322337,
+      "rmse": 13.43085078418192
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "partition": "test",
+      "model": "physics_guided_two_stage",
+      "target": "strain_ue",
+      "r2": 0.9104566055279318,
+      "mae": 72.86592051627386,
+      "rmse": 91.13773881912334
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "partition": "test",
+      "model": "physics_guided_two_stage",
+      "target": "temperature_c",
+      "r2": 0.19478128825511432,
+      "mae": 8.922308979788031,
+      "rmse": 11.187440140813141
+    }
+  ],
+  "physics_guided_real_anchor_metrics": [
+    {
+      "split_method": "paper_random_70_20_10",
+      "model": "physics_guided_two_stage",
+      "target": "strain_ue",
+      "r2": NaN,
+      "mae": 41.13150974567843,
+      "rmse": 42.41423288708275
+    },
+    {
+      "split_method": "paper_random_70_20_10",
+      "model": "physics_guided_two_stage",
+      "target": "temperature_c",
+      "r2": 0.8549959753078523,
+      "mae": 4.144322040433283,
+      "rmse": 4.40366377248859
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "model": "physics_guided_two_stage",
+      "target": "strain_ue",
+      "r2": NaN,
+      "mae": 41.25111448808177,
+      "rmse": 43.237050938364504
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "model": "physics_guided_two_stage",
+      "target": "temperature_c",
+      "r2": 0.8455734657544232,
+      "mae": 4.1556882104159,
+      "rmse": 4.544489313795677
+    }
+  ],
+  "cnn": null
+}

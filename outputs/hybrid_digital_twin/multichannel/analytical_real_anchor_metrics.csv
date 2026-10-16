@@ -1,0 +1,3 @@
+model,target,r2,mae,rmse
+four_channel_physics_inverse,strain_ue,,115.13111324117457,147.2159293346693
+four_channel_physics_inverse,temperature_c,-1.4715255235921028,14.317022069403384,18.18053562563478

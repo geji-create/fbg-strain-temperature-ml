@@ -1,0 +1,40 @@
+{
+  "spectra_source": "C:\\Users\\geji\\Desktop\\大创\\fbg_ml_reproduction\\outputs\\baseline\\spectra.csv",
+  "spectra_count": 3500,
+  "condition_count": 70,
+  "feature_warning_count": 0,
+  "best_test_rows": [
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "strain_ue",
+      "model": "random_forest",
+      "r2": 0.9741451600396331,
+      "mae": 30.465919528368012,
+      "rmse": 46.193138761104585
+    },
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "temperature_c",
+      "model": "random_forest",
+      "r2": 0.8078022581024058,
+      "mae": 3.164121876372403,
+      "rmse": 4.7850733317095795
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "strain_ue",
+      "model": "random_forest",
+      "r2": 0.8471632012570972,
+      "mae": 104.55869593850272,
+      "rmse": 117.66248292499289
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "temperature_c",
+      "model": "gradient_boosting",
+      "r2": -0.16877374465140194,
+      "mae": 12.046571398381404,
+      "rmse": 12.512872773383403
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+split_method,model,target,r2,mae,rmse
+paper_random_70_20_10,physics_guided_two_stage,strain_ue,,41.13150974567843,42.41423288708275
+paper_random_70_20_10,physics_guided_two_stage,temperature_c,0.8549959753078523,4.144322040433283,4.40366377248859
+unseen_condition_70_20_10,physics_guided_two_stage,strain_ue,,41.25111448808177,43.237050938364504
+unseen_condition_70_20_10,physics_guided_two_stage,temperature_c,0.8455734657544232,4.1556882104159,4.544489313795677

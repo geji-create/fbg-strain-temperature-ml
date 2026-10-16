@@ -1,0 +1,107 @@
+{
+  "device": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch_version": "2.11.0+cu128",
+  "conditions": 5000,
+  "feature_samples": 10000,
+  "spectrum_samples": 10000,
+  "split_counts": {
+    "train": 7000,
+    "validation": 1500,
+    "test": 1500
+  },
+  "models": [
+    {
+      "model": "feature_mlp",
+      "parameters": 2594,
+      "best_epoch": 30,
+      "epochs_run": 65,
+      "best_validation_loss_scaled": 0.3208063424428304,
+      "metrics": {
+        "train": {
+          "temperature": {
+            "mae_C": 7.42328405380249,
+            "rmse_C": 8.76763916015625,
+            "r2": 0.1361374855041504
+          },
+          "strain": {
+            "mae_ue": 62.48958206176758,
+            "rmse_ue": 74.21150970458984,
+            "r2": 0.91773521900177
+          }
+        },
+        "validation": {
+          "temperature": {
+            "mae_C": 7.3417768478393555,
+            "rmse_C": 8.723832130432129,
+            "r2": 0.1534351110458374
+          },
+          "strain": {
+            "mae_ue": 62.6383171081543,
+            "rmse_ue": 74.35809326171875,
+            "r2": 0.9217831492424011
+          }
+        },
+        "test": {
+          "temperature": {
+            "mae_C": 7.475489616394043,
+            "rmse_C": 8.782758712768555,
+            "r2": 0.1573593020439148
+          },
+          "strain": {
+            "mae_ue": 63.34192657470703,
+            "rmse_ue": 74.85950469970703,
+            "r2": 0.9162031412124634
+          }
+        }
+      },
+      "checkpoint": "C:\\Users\\geji\\Desktop\\大创\\fbg_ml_reproduction\\outputs\\pytorch_expanded_v1\\feature_mlp_best.pt"
+    },
+    {
+      "model": "spectrum_cnn",
+      "parameters": 13330,
+      "best_epoch": 138,
+      "epochs_run": 173,
+      "best_validation_loss_scaled": 0.32833276041348775,
+      "metrics": {
+        "train": {
+          "temperature": {
+            "mae_C": 7.447088241577148,
+            "rmse_C": 8.791683197021484,
+            "r2": 0.1313929557800293
+          },
+          "strain": {
+            "mae_ue": 62.53712844848633,
+            "rmse_ue": 74.455322265625,
+            "r2": 0.9171937704086304
+          }
+        },
+        "validation": {
+          "temperature": {
+            "mae_C": 7.49160623550415,
+            "rmse_C": 8.857869148254395,
+            "r2": 0.12722134590148926
+          },
+          "strain": {
+            "mae_ue": 63.74997329711914,
+            "rmse_ue": 75.50384521484375,
+            "r2": 0.9193542003631592
+          }
+        },
+        "test": {
+          "temperature": {
+            "mae_C": 7.5171217918396,
+            "rmse_C": 8.822969436645508,
+            "r2": 0.1496257185935974
+          },
+          "strain": {
+            "mae_ue": 63.685604095458984,
+            "rmse_ue": 75.65177154541016,
+            "r2": 0.9144200682640076
+          }
+        }
+      },
+      "checkpoint": "C:\\Users\\geji\\Desktop\\大创\\fbg_ml_reproduction\\outputs\\pytorch_expanded_v1\\spectrum_cnn_best.pt"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "simulation": {
+    "reference_bragg_nm": 1548.097,
+    "reference_temperature_c": 20.0,
+    "effective_index": 1.447,
+    "grating_length_m": 0.01,
+    "index_modulation": 0.00013,
+    "photoelastic_coefficient": 0.22,
+    "thermal_expansion_per_c": 5.5e-7,
+    "thermo_optic_per_c": 7.0e-6,
+    "wavelength_min_nm": 1547.5,
+    "wavelength_max_nm": 1549.8,
+    "wavelength_step_nm": 0.005,
+    "strain_levels_ue": [0, 100, 200, 300, 400, 500, 600, 700, 800, 900],
+    "temperature_min_f": 46.0,
+    "temperature_max_f": 105.0,
+    "temperature_count": 7,
+    "replicates_per_condition": 50,
+    "strain_jitter_std_ue": 2.0,
+    "temperature_jitter_std_c": 0.08,
+    "wavelength_offset_std_nm": 0.002,
+    "power_noise_std_db": 0.12,
+    "power_scale_std_db": 0.25,
+    "baseline_slope_std_db_per_nm": 0.08,
+    "ripple_amplitude_std_db": 0.05,
+    "instrument_resolution_fwhm_nm": 0.01,
+    "coupling_temperature_coefficient_per_c": 0.0,
+    "coupling_strain_coefficient_per_ue": 0.0,
+    "random_seed": 20261012
+  },
+  "features": {
+    "savgol_window": 9,
+    "savgol_order": 2,
+    "sidelobe_near_nm": 0.06,
+    "sidelobe_far_nm": 0.35
+  },
+  "models": {
+    "n_estimators": 150,
+    "boosting_learning_rate": 0.01,
+    "random_seed": 42
+  }
+}
+

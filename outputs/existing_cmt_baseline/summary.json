@@ -1,0 +1,40 @@
+{
+  "spectra_source": "C:\\Users\\geji\\Desktop\\大创\\fbg_uniform_cmt_spectra.csv",
+  "spectra_count": 3500,
+  "condition_count": 70,
+  "feature_warning_count": 0,
+  "best_test_rows": [
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "strain_ue",
+      "model": "random_forest",
+      "r2": 0.956837160224889,
+      "mae": 31.06807146970321,
+      "rmse": 59.69344051242918
+    },
+    {
+      "split_method": "paper_random_70_20_10",
+      "target": "temperature_c",
+      "model": "random_forest",
+      "r2": 0.7907767368494145,
+      "mae": 2.5851441328738467,
+      "rmse": 4.997739142182592
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "strain_ue",
+      "model": "adaboost",
+      "r2": 0.7426477097327231,
+      "mae": 145.71530417065432,
+      "rmse": 152.72365760201603
+    },
+    {
+      "split_method": "unseen_condition_70_20_10",
+      "target": "temperature_c",
+      "model": "gradient_boosting",
+      "r2": -0.4740381151839179,
+      "mae": 13.624480023068905,
+      "rmse": 14.04193448170391
+    }
+  ]
+}

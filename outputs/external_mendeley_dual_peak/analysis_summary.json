@@ -1,0 +1,17 @@
+{
+  "n_spectra": 17,
+  "n_wavelength_points": 1001,
+  "temperature_min_c": 2.0,
+  "temperature_max_c": 50.0,
+  "wavelength_min_nm": 1548.68,
+  "wavelength_max_nm": 1550.68,
+  "sensing_peak_sensitivity_pm_per_c": 9.285130718940405,
+  "sensing_peak_fit_r2": 0.9762716656453669,
+  "reference_peak_std_pm": 12.917441469498685,
+  "minimum_peak_separation_pm": 67.00000000000728,
+  "loocv_temperature_mae_c": 2.0337110909647036,
+  "loocv_temperature_rmse_c": 2.4938574132749167,
+  "loocv_temperature_r2": 0.9712068296400637,
+  "source_doi": "10.17632/fymrd8js55.2",
+  "license": "CC BY 4.0"
+}

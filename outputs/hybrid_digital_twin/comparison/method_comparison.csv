@@ -1,0 +1,17 @@
+scope,method,target,r2,mae,rmse
+simulated_unseen_condition,Single-channel six features,strain_ue,0.9281645971812114,65.79930972070852,81.6301769729864
+simulated_unseen_condition,Single-channel six features,temperature_c,0.3421026409349883,8.249748341912177,10.112368028132966
+simulated_unseen_condition,Four-channel feature fusion,strain_ue,0.9386152473745084,63.21320108685627,75.45911846501552
+simulated_unseen_condition,Four-channel feature fusion,temperature_c,0.4229593542050714,7.8514952104469105,9.470589179764476
+simulated_unseen_condition,Physics-guided two-stage,strain_ue,0.9104566055279318,72.86592051627386,91.13773881912334
+simulated_unseen_condition,Physics-guided two-stage,temperature_c,0.1947812882551143,8.922308979788031,11.18744014081314
+simulated_unseen_condition,Four-channel CNN (quick),strain_ue,0.9063135385513306,79.81382751464844,93.22230130680909
+simulated_unseen_condition,Four-channel CNN (quick),temperature_c,0.2663757801055908,8.943631172180176,10.67850941632268
+real_temperature_anchor,Single-channel six features,strain_ue,,45.79185749487763,59.74519558081392
+real_temperature_anchor,Single-channel six features,temperature_c,0.6278252337740868,5.445073543595563,7.055009229733123
+real_temperature_anchor,Four-channel feature fusion,strain_ue,,35.828834906341214,41.86126289975696
+real_temperature_anchor,Four-channel feature fusion,temperature_c,0.7741554784424516,4.359052815730394,5.495774494000574
+real_temperature_anchor,Physics-guided two-stage,strain_ue,,41.25111448808177,43.2370509383645
+real_temperature_anchor,Physics-guided two-stage,temperature_c,0.8455734657544232,4.1556882104159,4.544489313795677
+real_temperature_anchor,Four-channel CNN (quick),strain_ue,0.0,246.0068817138672,262.496101161522
+real_temperature_anchor,Four-channel CNN (quick),temperature_c,-12.335410118103027,40.72771453857422,42.23060731668368

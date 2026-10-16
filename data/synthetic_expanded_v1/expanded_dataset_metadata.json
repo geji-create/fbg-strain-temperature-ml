@@ -1,0 +1,28 @@
+{
+  "dataset_name": "expanded_uniform_fbg_two_solver_v1",
+  "seed": 20261013,
+  "independent_conditions": 5000,
+  "solver_count": 2,
+  "spectra_count": 10000,
+  "wavelength_points": 461,
+  "wavelength_range_nm": [
+    1547.5,
+    1549.8000000000502
+  ],
+  "wavelength_step_nm": 0.005000000000109139,
+  "temperature_range_C": [
+    7.777777777777778,
+    40.55555555555556
+  ],
+  "strain_range_ue": [
+    0.0,
+    900.0
+  ],
+  "sampling": "Latin hypercube; continuous temperature and strain",
+  "split_rule": "70/15/15 by condition_id; paired solvers always share a split",
+  "solvers": [
+    "uniform_cmt",
+    "simplus_like"
+  ],
+  "important_limitation": "Synthetic data cannot replace experimental strain validation. The 40 real files currently validate temperature only."
+}
