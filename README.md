@@ -1,12 +1,14 @@
-# 单均匀 FBG 温度-应变机器学习复现工程
+# FBG 温度–应变解耦：论文复现与实验验证
 
-**FBG strain–temperature discrimination with coupled-mode simulation, real four-channel calibration, classical machine learning and PyTorch.**
+这是我在大创项目中整理的一套 FBG 温度–应变机器学习实验。最初的目标是复现论文 *Machine Learning Methods for Discriminating Strain and Temperature Effects on FBG-Based Sensors*，随后又加入了真实四通道温度标定、仿真数据扩增、一维 CNN、位置/谱形消融实验，以及第三方公开数据验证。
 
-本项目以论文复现为起点，进一步完成真实四通道温度标定、仿真数据扩增、一维 CNN、位置/谱形消融实验和第三方公开数据验证。项目重点不是单纯追求高分数，而是区分随机划分结果、未见工况泛化、跨仿真器迁移与真实实验验证的证据边界。
+这个仓库主要想回答两个问题：论文中的六特征机器学习方法能否复现，以及模型换到未见工况、不同仿真器或真实光谱后还能保留多少性能。因此，除了常规随机划分，我也保留了完整工况留出和跨数据来源测试，没有只展示最好看的分数。
 
-![位置与谱形消融实验](figures/publication/fig04_ablation_position_shape.png)
+![位置与谱形消融实验](figures/publication/fig04_ablation_position_shape.png?v=20261016-2)
 
-## 主要结果
+> 位置/谱形消融实验，柱高为三次重复实验的平均 MAE，误差棒表示标准差。完整光谱与绝对位置结合后，两项任务都取得了当前最好的结果。
+
+## 目前得到的结果
 
 | 实验 | 数据 | 主要结果 |
 |---|---|---|
@@ -15,9 +17,11 @@
 | 位置/谱形消融 | 5 个变体 × 3 次重复 | 完整光谱加绝对位置表现最佳，温度 MAE 1.32 ± 0.12 °C |
 | 第三方实测温度验证 | 17 条双峰 FBG 光谱 | 峰位灵敏度 9.29 pm/°C；LOOCV 温度 MAE 2.03 °C |
 
-上述 CNN 与消融结果来自仿真或半实物数据，不能等同于真实温度—应变联合解耦精度。真实联合加载实验仍是后续工作的关键验证环节。
+这里需要说明：CNN 和消融实验使用的是仿真或半实物数据，它们能帮助比较方法，但还不能代表真实传感器在温度—应变联合加载下的最终精度。真正的联合加载实验仍然是下一阶段最重要的工作。
 
-本工程复现论文 *Machine Learning Methods for Discriminating Strain and Temperature Effects on FBG-Based Sensors* 的主要计算流程：
+## 复现内容
+
+论文中的主要计算流程包括：
 
 1. 用均匀 FBG 耦合模理论生成反射光谱；
 2. 建立 10 个应变等级 × 7 个温度点的 70 个工况；
@@ -49,7 +53,7 @@
 - 数据划分：70% 训练、20% 验证、10% 测试；
 - Boosting 学习率：0.01。
 
-论文没有公开全部 10 个应变数值、光栅长度、折射率调制和仪器采样参数。本工程把这些数值集中放在 `config.default.json` 中。当前的 `0-900 µε`、10 mm、中心波长 1548.097 nm 等是可替换的复现假设，不应写成论文原始参数。
+论文没有公开全部 10 个应变数值、光栅长度、折射率调制和仪器采样参数。复现时补充的参数统一放在 `config.default.json` 中。其中 `0-900 µε`、10 mm、中心波长 1548.097 nm 等都是可替换的建模假设，并非论文给出的原始参数。
 
 ## 运行环境
 
@@ -202,7 +206,7 @@ cd fbg_ml_reproduction
 
 ## 第三方公开实测数据
 
-为了增加独立于本项目设备和仿真程序的外部证据，项目引入了 Şerif Ali Sadık 发布的双峰 FBG 温度光谱数据集（Mendeley Data v2，DOI：`10.17632/fymrd8js55.2`，CC BY 4.0）。数据包含 17 条 Anritsu MS9710B 实测光谱，每条 1001 个波长点；感温 FBG 为 2–50 °C，参考 FBG 固定在 20 °C。
+为了看看标定流程换到另一套实测光谱后是否仍然成立，我又加入了 Şerif Ali Sadık 发布的双峰 FBG 温度数据集（Mendeley Data v2，DOI：`10.17632/fymrd8js55.2`，CC BY 4.0）。其中共有 17 条 Anritsu MS9710B 实测光谱，每条包含 1001 个波长点；感温 FBG 的温度范围为 2–50 °C，参考 FBG 固定在 20 °C。
 
 双击 `处理第三方公开数据.cmd`，或运行：
 
@@ -211,4 +215,5 @@ cd fbg_ml_reproduction
 ```
 
 该流程会生成标准化 NPZ、带温度标签的 CSV/CSV.GZ、留一法温度标定结果和两张论文图。由于样本数只有 17，这组数据定位为独立外部验证集，不作为深度学习训练集。来源与署名要求见 `data\external_mendeley_dual_peak\SOURCE.md`。
+
 
