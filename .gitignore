@@ -47,10 +47,16 @@ figures/publication/*.svg
 # Personal presentation/report deliverables are kept locally
 presentations/final/*.pptx
 presentations/final/*.pdf
+presentations/*_大创项目展板_*.pdf
+presentations/*_大创项目展板_*_预览.png
 reports/final/
 reports/presentation_support/
 scripts/build_progress_report.py
 scripts/build_final_project_report.py
+scripts/build_research_poster.py
+
+# Local rendering and inspection workspace
+tmp/
 
 # Editor and Office temporary files
 .vscode/
@@ -58,4 +64,5 @@ scripts/build_final_project_report.py
 ~$*
 *.tmp
 *.bak
+
 
